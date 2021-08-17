@@ -33,8 +33,16 @@ function Table() {
 
     const fetchData = () => {
         return fetch("/api/leagues-classic/"+location+"/standings/")
-              .then((response) => response.json())
-              .then((data) => setPeople(data.standings.results));}
+              .then(async response => {
+                try {
+                 const data = await response.json()
+                 setPeople(data.standings.results);
+               } catch(error) {
+                 console.log('Error happened here!')
+                 console.error(error)
+               }
+              })}
+              
               
 
         for(var i in peoples) {
