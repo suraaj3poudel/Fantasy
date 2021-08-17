@@ -1,0 +1,16 @@
+.playerInfo{
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+#tableContent{
+    display: flex;
+    flex-direction: row;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    z-index: -1;
+}

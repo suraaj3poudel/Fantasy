@@ -1,0 +1,19 @@
+
+.app{
+  font-family: 'Poppins';
+  position: relative;
+}
+
+.appBody{
+  margin-top: 80px;
+}
+
+.body{
+  position: relative;
+  min-height: 100vh;
+  bottom: 0;
+}
+
+
+
+

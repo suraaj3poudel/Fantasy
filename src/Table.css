@@ -1,0 +1,9 @@
+
+.tableContent{
+    margin-top:5px;
+}
+
+.rows:nth-child(even) {
+    background:red;
+  }
+

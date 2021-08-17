@@ -1,0 +1,28 @@
+#table_header{ 
+    padding: 0px;
+    width:100%;
+    text-align: left;
+    font-size: 15px;
+    background-color: rgb(167, 167, 167);
+    font-weight: bold;
+    position: sticky ;
+    top:70px;
+}
+
+#header_table{
+    border-collapse: collapse;
+}
+
+td {
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-color: rgb(209, 209, 209);
+    border-left-style: none;
+    padding: 8px;
+    height: 40px;
+  }
+
+
+Row:nth-child(even) {
+    background-color: #d4cfcf;
+  }
