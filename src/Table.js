@@ -27,17 +27,18 @@ function Table() {
 
     var location = window.location.pathname;
     if(location === "/")
-        location  =  '1241059';
+        location  =  '/1241059';
     
-    console.log(location+"hi");
 
     const fetchData = () => {
-        return fetch("/api/leagues-classic/"+location+"/standings/")
+        return fetch("/api/leagues-classic"+location+"/standings/")
               .then(async response => {
                 try {
-                 const data = await response.json()
+                 console.log(response)
+                 const data = await response.json();
                  setPeople(data.standings.results);
                } catch(error) {
+                 fetchData();
                  console.log('Error happened here!')
                  console.error(error)
                }
@@ -66,9 +67,6 @@ function Table() {
         // players.sort((a,b) => {
         //     return a.gw - b.gw;
         // });
-
-        console.log(players);
-        console.log(players);
 
     return (
         
