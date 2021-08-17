@@ -1,14 +1,11 @@
 import React from 'react';
 import "./Row.css";
 import { motion } from 'framer-motion';
-import Player from './Player';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Row(props) {
     var cl = 'white';
-    const [ view, setViews] = useState("");
-    if(props.index%2 ==0 ){
+    if(props.index%2 === 0 ){
         cl='#e6e7ef'
     }
 

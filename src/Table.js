@@ -29,7 +29,7 @@ function Table() {
     if(location === "/")
         location  =  '1241059';
     
-    //console.log(location);
+    console.log(location+"hi");
 
     const fetchData = () => {
         return fetch("/api/leagues-classic/"+location+"/standings/")

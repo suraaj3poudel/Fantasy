@@ -8,7 +8,6 @@ function Header() {
         <div className="header">
             <img src={logo} alt="pl logo"></img>
             <h4>#NoRoomForRacism</h4>
-            <DropDownBox/>
         </div>
     )
 }

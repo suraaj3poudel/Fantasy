@@ -8,16 +8,14 @@ function DropDownBox() {
     return (
         <div>
             <Dropdown>
-                <Dropdown.Toggle title="" variant="success" id="dropdown-basic">
+                <Dropdown.Toggle  variant="success" id="dropdown-basic">
                     {title}
                 </Dropdown.Toggle>
 
-                
                 <Dropdown.Menu>
-                
                     <Dropdown.Item href="/1241059" onClick={()=>setTitle("Camel Crush")}>Camel Crush</Dropdown.Item>
-                    <Dropdown.Item href="/37636"onClick={()=>setTitle("BPL")}>Biratnagar Premier League</Dropdown.Item>
-                    <Dropdown.Item href="/1292014"onClick={()=>setTitle("Khasi Cup")}>Khasi Cup</Dropdown.Item>
+                    <Dropdown.Item href="/37636" onClick={()=>setTitle("BPL")}>Biratnagar Premier League</Dropdown.Item>
+                    <Dropdown.Item href="/1292014" onClick={()=>setTitle("Khasi Cup")}>Khasi Cup</Dropdown.Item>
                 </Dropdown.Menu>
                 
             </Dropdown>

@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
+import React from 'react'
 import "./Player.css"
-import Row from './Row';
 import { useState } from 'react';
 import { useEffect} from 'react';
 import PlayerCard from './PlayerCard';
+import DropDownBox from './DropDownBox';
 
 function Player({match}) {
     const [ player, setPlayerData] = useState([]);
@@ -25,7 +25,7 @@ function Player({match}) {
         
     //console.log(match.params.ids);
     const fetchData = () => {
-        return fetch("/api/entry/"+match.params.name+"/event/1/picks/")
+        return fetch("/api/entry/"+pid+"/event/1/picks/")
               .then((response) => response.json())
               .then((data) => setPlayerData(data.picks));}
 
@@ -43,6 +43,7 @@ function Player({match}) {
             <div id="table">
                 <div className="tableContent">
                 <h1 class="playerInfo" > Player Details </h1>
+                <DropDownBox/>
                 <div className="cards">
             {player.map(function (footballer){ 
                 var x =  playerDetails.find(x=> x.id=== footballer.element);
