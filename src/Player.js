@@ -48,7 +48,7 @@ function Player({match}) {
                 .then((data) => setPlayerDetails(data.elements));}
     
     
-
+    
         return (
         
             <div id="table">

@@ -31,7 +31,7 @@ function Table() {
     
 
     const fetchData = () => {
-        return fetch("/api/leagues-classic"+location+"/standings/")
+        return fetch("https://fantasy.premierleague.com/api/leagues-classic"+location+"/standings/")
               .then(async response => {
                 try {
                  console.log(response)
@@ -67,6 +67,9 @@ function Table() {
         // players.sort((a,b) => {
         //     return a.gw - b.gw;
         // });
+
+
+        console.log(players);
 
     return (
         
