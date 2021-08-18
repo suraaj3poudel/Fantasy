@@ -2,23 +2,26 @@ import React from 'react'
 import "./Player.css"
 import { useState } from 'react';
 import { useEffect} from 'react';
-import PlayerCard from './PlayerCard';
-import DropDownBox from './DropDownBox';
 import Bench from './Bench';
 import GoalKeeper from './GoalKeeper';
 import Defender from './Defender';
 import Midfielder from './Midfielder';
 import Forward from './Forward';
+import { useLocation } from "react-router-dom"
+import PlayerInfo from './PlayerInfo';
 
 function Player({match}) {
     const [ player, setPlayerData] = useState([]);
-    const [ playerDetails, setPlayerDetails] = useState("hi");
+    const [ playerDetails, setPlayerDetails] = useState();
     var pid = match.params.name;
     var bench= [];
     var goalKeeper=[];
     var defender =[];
     var mid =[];
     var forward=[];
+    const location = useLocation();
+    const pName = location.state?.pName;
+
     useEffect(() => {
         fetchData();
         fetchPlayers();
@@ -33,7 +36,7 @@ function Player({match}) {
         }, [])
     
         
-    //console.log(match.params.ids);
+
     const fetchData = () => {
         return fetch("/api/entry/"+pid+"/event/1/picks/")
               .then((response) => response.json())
@@ -50,9 +53,8 @@ function Player({match}) {
         
             <div id="table">
                 <div className="tableContent">
-                <h1 class="playerInfo" > Player Details </h1>
-                <DropDownBox/>
-               
+                <PlayerInfo name={pName}
+                            id={pid}/>
                     {player.map(function (footballer){ 
                         var x =  playerDetails.find(x=> x.id=== footballer.element);
                         if(footballer.multiplier!=0){

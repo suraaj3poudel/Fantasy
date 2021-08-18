@@ -19,7 +19,9 @@
   content: url('./images/logo.PNG');
 }
 
-
+.dropdown-content{
+  margin-top: 100px;
+}
 
 @media only screen and (min-width: 600px) {
   .playerTitle{
@@ -57,8 +59,21 @@
     border-radius: 10px;
   }
 
+  .ranks_points> .box{
+    border:4px solid black;
+    justify-content: space-between;
+    margin: 1em;
+    padding:1em;
+    text-align: center;
+    width: 200px;
+  }
+
+  .box>h1{
+    color: rgb(241, 68, 68);
+    font-size: 4em;
+   
 }
 
 
-
+}
 

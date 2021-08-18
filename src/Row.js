@@ -16,7 +16,7 @@ function Row(props) {
         transition={{duration:2}}> 
         
 
-        <Link to={`/player/${props.ids}`} name='{props.name}'>
+        
             <table id="rowTable" style={{width:'100%'}}  >
                 
                 <colgroup>
@@ -28,15 +28,21 @@ function Row(props) {
                 </colgroup>
             <tbody>
                     <tr>
-                    <td id='green'></td>
+                    <td>▼</td>
                     <td id='rank'>{props.rank}</td>
+                    <Link to={{
+            pathname: `/player/${props.ids}`,
+            state: {pName : props.name,
+                    
+                   }
+        }} >
                     <td id='name' style={{textTransform:'capitalize', textAlign:"center"}}>{props.name}</td>
+                    </Link>
                     <td id='gwPoints'>{props.gwPoints}</td>
                     <td id='totalPoints'> {props.totalPoints} </td>
                 </tr>
             </tbody>
             </table>
-        </Link>
     </motion.div> 
     )
 }

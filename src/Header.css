@@ -5,12 +5,13 @@
 
 
 
+
 .header{
     background-color: rgb(56, 2, 56);
     background-image: url(./images/bg.svg);
     background-position: -110px 60px;
     display:flex;
-    z-index: 1;
+    z-index: 3;
     position: fixed;
     width:100%;
     top:0;
@@ -26,6 +27,8 @@
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
+
+
 
 .bar{
     width: 2.2rem;

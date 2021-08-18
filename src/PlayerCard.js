@@ -23,7 +23,7 @@ function PlayerCard(props) {
         <div class="grid">
         <label class="card" >
           <div class="card__body">
-            <div class="card__body-cover"><img alt= {props.image} class="card__body-cover-image" src={props.image}/> </div>
+            <div class="card__body-cover"><img alt= {props.name} class="card__body-cover-image" src={props.image}/> </div>
             <div class={clas} style={{border:"2 px"}}>
               <h4 class="card__body-header-title" style={{color:'black'}}>{props.name + capt}</h4>
             </div>

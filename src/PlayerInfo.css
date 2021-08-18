@@ -1,0 +1,76 @@
+.playerDetails{
+    padding:20px;
+    background-color:purple;
+    border-radius: 10px;
+    color: white;
+    margin-top: 100px;
+    text-transform: capitalize;
+}
+
+.playerBody{
+    background-color: white;
+    color:black;
+    padding: 2em;
+}
+
+#teamName{
+    margin-bottom: 30px;
+    border-bottom: 3px solid black;
+    display:flex;
+}
+
+.ranks_points{
+    display: flex;
+    overflow: auto;
+    justify-content: space-between;
+}
+
+.ranks_points> .box{
+    border:4px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding:1em;
+    font-size: 30%;
+    margin:2em;
+    text-align: center;
+    width: 95%;
+}
+
+.mini-boxes{
+    color: rgb(241, 68, 68);
+    font-size: 5em;  
+} 
+
+.box{
+    
+}
+
+.info{
+    color: crimson;
+    background-color: rgb(247, 207, 247);
+    text-shadow: purple;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .ranks_points{
+        display: block;
+    }
+
+    .box{
+        border:4px solid black;
+        display: flex;
+        flex-direction: wrap;
+        margin: 1em;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .mini-boxes{
+        color: red;
+        flex-direction: column;
+        font-size: 5em;  
+    } 
+}
