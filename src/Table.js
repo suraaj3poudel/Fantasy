@@ -31,7 +31,12 @@ function Table() {
     
 
     const fetchData = () => {
-        return fetch("leagues-classic"+location+"/standings/")
+        return fetch("leagues-classic"+location+"/standings/"),{
+            method: "GET",
+            headers: {
+              "access-control-allow-origin" : "*",
+              "Content-type": "application/json; charset=UTF-8"
+            }}
               .then(async response => {
                 try {
                  console.log(response)
