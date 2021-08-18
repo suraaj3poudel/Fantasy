@@ -3,7 +3,7 @@ Fantasy Premier League Live Points Display App.
 View your friends live fantasy scores.
 See which clubs/leagues they participate in, his/her rank in the league.
 See his/her full squad list/ bench/ captain/ vice-captains/ world ranking/ total points.
-See anyone's points if you have the player their player id.
+See anyone's points if you have their player id.
 
 For more info on running the app, see below.
 -----------------------------------------------------------------------------------------------------------
