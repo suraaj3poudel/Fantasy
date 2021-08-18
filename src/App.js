@@ -7,17 +7,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Player from './Player';
 import TabularBody from './TabularBody';
-import DropDownBox from './DropDownBox';
+import MenuItems from './MenuItems';
 
 function App() {
-
- 
-
   return (
     <div className="app">
         <Header/>
         <div class="body">
-        
+        <MenuItems/>
         <Router>
         <Route exact path="/" component={TabularBody}/>
           <Route exact path="/:id" component={TabularBody}/>

@@ -3,36 +3,36 @@
     margin-left: 0px;
 }
 
-#dropDown{
-    margin-right: 100px;
-}
+
 
 .header{
     background-color: rgb(56, 2, 56);
     background-image: url(./images/bg.svg);
     background-position: -110px 60px;
     display:flex;
+    z-index: 1;
     position: fixed;
     width:100%;
     top:0;
     align-items: center;
     justify-content: space-between;
     color: white;
-    
 }
 
-.header>h4{
-    margin-right: 60px;
-    font-size: 20px;
+
+.menubar{
+    padding: 2em;
+    border-left: 0.1em solid white;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
-@media only screen and (max-width: 600px) {
-    .header>h4{
-        margin-right: 50px;
-        font-size: 17px;
-    } 
-
-    #dropDown{
-        margin-right: 100px;
-    }
+.bar{
+    width: 2.2rem;
+    height: .2rem;
+    background: #fff;
+    margin-bottom: .3rem;
+    border-radius: .3rem;
+    position: relative;
 }
+

@@ -4,11 +4,21 @@ import { useState } from 'react';
 import { useEffect} from 'react';
 import PlayerCard from './PlayerCard';
 import DropDownBox from './DropDownBox';
+import Bench from './Bench';
+import GoalKeeper from './GoalKeeper';
+import Defender from './Defender';
+import Midfielder from './Midfielder';
+import Forward from './Forward';
 
 function Player({match}) {
     const [ player, setPlayerData] = useState([]);
     const [ playerDetails, setPlayerDetails] = useState("hi");
     var pid = match.params.name;
+    var bench= [];
+    var goalKeeper=[];
+    var defender =[];
+    var mid =[];
+    var forward=[];
     useEffect(() => {
         fetchData();
         fetchPlayers();
@@ -33,10 +43,8 @@ function Player({match}) {
         return fetch("/api/bootstrap-static/")
                 .then((response) => response.json())
                 .then((data) => setPlayerDetails(data.elements));}
-              
-       
     
-
+    
 
         return (
         
@@ -44,17 +52,55 @@ function Player({match}) {
                 <div className="tableContent">
                 <h1 class="playerInfo" > Player Details </h1>
                 <DropDownBox/>
-                <div className="cards">
-            {player.map(function (footballer){ 
-                var x =  playerDetails.find(x=> x.id=== footballer.element);
-               return(<PlayerCard 
-                  image={"https://resources.premierleague.com/premierleague/photos/players/110x140/p"+x.photo.replace(".jpg",".png")}
-                  rank={footballer.position==null ? "N/A" : footballer.position}
-                  totalPoints={footballer.multiplier ==null ? "N/A" : x.event_points}
-                  name={footballer.element ==null ? "N/A" : x.first_name+" "+x.second_name}
-                ></PlayerCard>)
-                })}
-              </div>
+               
+                    {player.map(function (footballer){ 
+                        var x =  playerDetails.find(x=> x.id=== footballer.element);
+                        if(footballer.multiplier!=0){
+                            if(x.element_type == 1){
+                                goalKeeper.push(footballer);
+                            }
+                            else if (x.element_type==2){
+                                defender.push(footballer);
+                            }
+
+                            else if (x.element_type==3){
+                                mid.push(footballer);
+                            }
+
+                            else if (x.element_type==4){
+                                forward.push(footballer);
+                            }
+
+                            
+                        }
+                        else{
+                            bench.push(footballer);
+                            return "";
+                        }
+                    })}
+
+               <div className="bodyBack">
+                <GoalKeeper
+                    gk ={goalKeeper}
+                    pd={playerDetails}
+                />
+                <Defender 
+                    def = {defender}
+                    pd= {playerDetails}
+                />
+                <Midfielder
+                    mid = {mid}
+                    pd= {playerDetails}
+                />
+                <Forward
+                    for = {forward}
+                    pd= {playerDetails}
+                />
+                </div>
+                <Bench 
+                    bench={bench}
+                    pd ={playerDetails}/>
+
               </div>
             </div>
         )

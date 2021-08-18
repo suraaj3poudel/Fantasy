@@ -6,8 +6,13 @@ import logo from "./images/logo.PNG"
 function Header() {
     return (
         <div className="header">
-            <img src={logo} alt="pl logo"></img>
-            <h4>#NoRoomForRacism</h4>
+            <img id="headerImg" alt="pl logo"></img>
+            <div className="menubar">
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
+            </div>
+            
         </div>
     )
 }
