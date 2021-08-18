@@ -31,7 +31,7 @@ function Table() {
     
 
     const fetchData = () => {
-        return fetch("https://fantasy.premierleague.com/api/leagues-classic"+location+"/standings/")
+        return fetch("leagues-classic"+location+"/standings/")
               .then(async response => {
                 try {
                  console.log(response)

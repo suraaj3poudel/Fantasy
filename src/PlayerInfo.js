@@ -19,7 +19,7 @@ function PlayerInfo(props) {
 
 
         const fetchData = () => {
-            return fetch("/api/entry/"+id+"/")
+            return fetch("entry/"+id+"/")
                   .then(async response => {
                     try {
                      console.log(response)

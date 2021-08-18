@@ -38,12 +38,12 @@ function Player({match}) {
         
 
     const fetchData = () => {
-        return fetch("/api/entry/"+pid+"/event/1/picks/")
+        return fetch("entry/"+pid+"/event/1/picks/")
               .then((response) => response.json())
               .then((data) => setPlayerData(data.picks));}
 
     const fetchPlayers = () => {
-        return fetch("/api/bootstrap-static/")
+        return fetch("bootstrap-static/")
                 .then((response) => response.json())
                 .then((data) => setPlayerDetails(data.elements));}
     
