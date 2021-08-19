@@ -22,7 +22,7 @@ function Table() {
 
     
     const fetchData = () => {
-        var link = "/leagues-classic"+location+"/standings";
+        var link = "/leagues-classic"+location+"/standings/";
         if(mounted){
             return fetch(link)
                   .then(async response => {
