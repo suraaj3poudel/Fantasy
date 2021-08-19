@@ -8,9 +8,7 @@ function Row(props) {
     if(props.index%2 === 0 ){
         cl='#e6e7ef'
     }
-
-
-
+    
     return (
     <motion.div layout id='row_header'  style={{backgroundColor:cl}}
         transition={{duration:2}}> 
