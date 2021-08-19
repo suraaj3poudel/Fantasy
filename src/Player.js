@@ -35,7 +35,7 @@ function Player({match}) {
     //     })
     
     
-    var link ="/entry/"+pid+"/event/1/picks/";
+    var link ="https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/entry/"+pid+"/event/1/picks/";
 
     const fetchData = () => {
         return fetch(link)
@@ -43,7 +43,7 @@ function Player({match}) {
               .then((data) => setPlayerData(data.picks));}
 
     const fetchPlayers = () => {
-        return fetch("/bootstrap-static/")
+        return fetch("https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/bootstrap-static/")
                 .then((response) => response.json())
                 .then((data) => setPlayerDetails(data.elements));}
     

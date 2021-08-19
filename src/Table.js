@@ -22,7 +22,7 @@ function Table() {
 
     
     const fetchData = () => {
-        var link = "/leagues-classic"+location+"/standings/";
+        var link = "https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/leagues-classic"+location+"/standings/";
         if(mounted){
             return fetch(link)
                   .then(async response => {

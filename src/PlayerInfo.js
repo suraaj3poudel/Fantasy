@@ -19,7 +19,7 @@ function PlayerInfo(props) {
 
 
         const fetchData = () => {
-            return fetch("/entry/"+id+"/")
+            return fetch("https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/entry/"+id+"/")
                   .then(async response => {
                     try {
                      const data = await response.json();
