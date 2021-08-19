@@ -16,16 +16,22 @@ function Table() {
     const [mounted, setM] = useState(true)
     var players = [];
 
+    var location = window.location.pathname;
+    if(location === "/")
+        location  =  '/1241059';
+
+    
     const fetchData = () => {
+        var link = "/leagues-classic"+location+"/standings";
         if(mounted){
-            return fetch("/leagues-classic"+location+"/standings/")
+            return fetch(link)
                   .then(async response => {
                     try {
                      const data = await response.json();
                      console.log("fetching....")
                      setPeople(data.standings.results);
                    } catch(error) {
-                     console.log('Error happened here!')
+                     console.log('Error happened here! '+link)
                      console.error(error)
                    }
                   })
@@ -45,9 +51,7 @@ function Table() {
         }, [])
     
 
-    var location = window.location.pathname;
-    if(location === "/")
-        location  =  '/1241059';
+   
     
 
     

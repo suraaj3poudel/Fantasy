@@ -34,10 +34,11 @@ function Player({match}) {
     //     }, 5000)
     //     })
     
-        
+    
+    var link ="/entry/"+pid+"/event/1/picks/";
 
     const fetchData = () => {
-        return fetch("/entry/"+pid+"/event/1/picks/")
+        return fetch(link)
               .then((response) => response.json())
               .then((data) => setPlayerData(data.picks));}
 
