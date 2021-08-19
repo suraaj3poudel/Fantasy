@@ -13,10 +13,30 @@ const people = []
 function Table() {
 
     const [ peoples, setPeople] = useState(people);
+    const [mounted, setM] = useState(true)
     var players = [];
+
+    const fetchData = () => {
+        if(mounted){
+            return fetch("/leagues-classic"+location+"/standings/")
+                  .then(async response => {
+                    try {
+                     const data = await response.json();
+                     console.log("fetching....")
+                     setPeople(data.standings.results);
+                   } catch(error) {
+                     console.log('Error happened here!')
+                     console.error(error)
+                   }
+                  })
+        }}
     useEffect(() => {
-        fetchData();
-        }, []);
+        setM(true);
+        if(mounted){
+            fetchData();
+        }
+        return ()=>setM(false) ;
+        },[mounted]);
 
     useEffect(()=>{
         setInterval(()=>{
@@ -30,19 +50,7 @@ function Table() {
         location  =  '/1241059';
     
 
-    const fetchData = () => {
-        return fetch("leagues-classic"+location+"/standings/")
-              .then(async response => {
-                try {
-                 console.log(response)
-                 const data = await response.json();
-                 setPeople(data.standings.results);
-               } catch(error) {
-                 fetchData();
-                 console.log('Error happened here!')
-                 console.error(error)
-               }
-              })}
+    
               
               
 
@@ -69,16 +77,16 @@ function Table() {
         // });
 
 
-        console.log(players);
 
     return (
         
         <div id="table">
             <div className="tableContent">
         
-        <AnimatePresence>
+        <AnimatePresence keys="nice">
         {players.map((people) => (
            <Row
+              key={people.id}
               className= "rows"
               ids={people.id}
               index = {players.indexOf(people)}

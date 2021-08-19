@@ -14,9 +14,6 @@ function Row(props) {
     return (
     <motion.div layout id='row_header'  style={{backgroundColor:cl}}
         transition={{duration:2}}> 
-        
-
-        
             <table id="rowTable" style={{width:'100%'}}  >
                 
                 <colgroup>
@@ -30,14 +27,14 @@ function Row(props) {
                     <tr>
                     <td>▼</td>
                     <td id='rank'>{props.rank}</td>
-                    <Link to={{
+                    
+                    <td id='name' style={{color:"black", textTransform:'capitalize', textAlign:"center"}}><Link to={{
             pathname: `/player/${props.ids}`,
             state: {pName : props.name,
                     
                    }
-        }} >
-                    <td id='name' style={{textTransform:'capitalize', textAlign:"center"}}>{props.name}</td>
-                    </Link>
+        }} style={{color:'black'}} id="link">{props.name}</Link></td>
+                    
                     <td id='gwPoints'>{props.gwPoints}</td>
                     <td id='totalPoints'> {props.totalPoints} </td>
                 </tr>

@@ -6,7 +6,7 @@ import Table from "./Table"
 function TabularBody() {
     return (
         <div>
-            <div class="upper_title">
+            <div className="upper_title">
                 <h1 id="title"> Premier League Rankings</h1>
             </div>
                 <TableHeader/>

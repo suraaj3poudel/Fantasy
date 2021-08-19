@@ -8,19 +8,21 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Player from './Player';
 import TabularBody from './TabularBody';
 import { useState } from 'react';
+import PremTable from './PremTable';
 
 function App() {
 
   const [visible, setstate] = useState(false)
 
   return (
-    <div className="app" onClick={()=>setstate(!visible)}>
-        <Header visible={visible}/>
-        <div class="body" >
+    <div className="app" >
+        <Header visible={visible}/> 
+        <div className="body" >
         <Router>
-        <Route exact path="/" component={TabularBody}/>
+          <Route exact path="/" component={TabularBody}/>
           <Route exact path="/:id" component={TabularBody}/>
           <Route exact path = "/player/:name" component={Player}/>
+          <Route exact path = "/prem-table" component={PremTable}/>
         </Router>
         </div>
         <Footer/>  

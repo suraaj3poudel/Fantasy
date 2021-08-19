@@ -20,14 +20,14 @@ function PlayerCard(props) {
 
     return (
 
-        <div class="grid">
-        <label class="card" >
-          <div class="card__body">
-            <div class="card__body-cover"><img alt= {props.name} class="card__body-cover-image" src={props.image}/> </div>
-            <div class={clas} style={{border:"2 px"}}>
-              <h4 class="card__body-header-title" style={{color:'black'}}>{props.name + capt}</h4>
+        <div className="grid">
+        <label className="card" >
+          <div className="card__body">
+            <div className="card__body-cover"><img alt= {props.name} className="card__body-cover-image" src={props.image}/> </div>
+            <div className={clas} style={{border:"2 px"}}>
+              <h4 className="card__body-header-title" style={{color:'black'}}>{props.name + capt}</h4>
             </div>
-            <p class="card__body-header-subtitle">{props.totalPoints*multiplier}</p>
+            <p className="card__body-header-subtitle">{props.totalPoints*multiplier}</p>
           </div>
         </label>
         </div>

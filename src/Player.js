@@ -22,33 +22,33 @@ function Player({match}) {
     const location = useLocation();
     const pName = location.state?.pName;
 
-    useEffect(() => {
-        fetchData();
-        fetchPlayers();
-        
-        }, []);
+    // useEffect(() => {
+    //     fetchData();
+    //     fetchPlayers();
+    //     });
 
-    useEffect(()=>{
-        setInterval(()=>{
-        fetchData();
-        fetchPlayers();
-        }, 5000)
-        }, [])
+    // useEffect(()=>{
+    //     setInterval(()=>{
+    //     fetchData();
+    //     fetchPlayers();
+    //     }, 5000)
+    //     })
     
         
 
     const fetchData = () => {
-        return fetch("entry/"+pid+"/event/1/picks/")
+        return fetch("/entry/"+pid+"/event/1/picks/")
               .then((response) => response.json())
               .then((data) => setPlayerData(data.picks));}
 
     const fetchPlayers = () => {
-        return fetch("bootstrap-static/")
+        return fetch("/bootstrap-static/")
                 .then((response) => response.json())
                 .then((data) => setPlayerDetails(data.elements));}
     
     
-    
+                fetchData();
+                fetchPlayers();
         return (
         
             <div id="table">
@@ -56,20 +56,23 @@ function Player({match}) {
                 <PlayerInfo name={pName}
                             id={pid}/>
                     {player.map(function (footballer){ 
+                        while(playerDetails == null){
+                            fetchPlayers();
+                        }
                         var x =  playerDetails.find(x=> x.id=== footballer.element);
-                        if(footballer.multiplier!=0){
-                            if(x.element_type == 1){
+                        if(footballer.multiplier!==0){
+                            if(x.element_type === 1){
                                 goalKeeper.push(footballer);
                             }
-                            else if (x.element_type==2){
+                            else if (x.element_type===2){
                                 defender.push(footballer);
                             }
 
-                            else if (x.element_type==3){
+                            else if (x.element_type===3){
                                 mid.push(footballer);
                             }
 
-                            else if (x.element_type==4){
+                            else if (x.element_type===4){
                                 forward.push(footballer);
                             }
 
@@ -79,7 +82,9 @@ function Player({match}) {
                             bench.push(footballer);
                             return "";
                         }
-                    })}
+                        return "";
+                    }
+                    )}
 
                <div className="bodyBack">
                 <GoalKeeper

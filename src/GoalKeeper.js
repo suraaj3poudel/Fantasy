@@ -15,6 +15,7 @@ function GoalKeeper(props) {
                 {gk.map(function (footballer){ 
                 var x =  playerDetails.find(x=> x.id=== footballer.element);
                 return(<PlayerCard
+                    key={x.id}
                     vc = {footballer.is_vice_captain}
                     captain= {footballer.is_captain} 
                     image={"https://resources.premierleague.com/premierleague/photos/players/110x140/p"+x.photo.replace(".jpg",".png")}

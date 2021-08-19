@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 function LeagueInfo(props) {
 
-    var info = ["One","two"];
     var num=1;
     var infos = props.leag
     return (
@@ -23,12 +22,10 @@ function LeagueInfo(props) {
                 <tbody >
                 {infos.map((league) => (
                    
-                    <tr>
+                    <tr key={num}>
                         <td>{num++}</td>
-
                         <td>{league.entry_rank > league.entry_last_rank? "▼": "▲"}</td>
-                        
-                            <td style={{textAlign:"left"}} className="leagueName"><Link to={{
+                            <td style={{textAlign:"left",color:'black'}} className="leagueName"><Link to={{
                         pathname: `/${league.id}`,
                         state: {pName : props.name,
                         }}} >{league.name} </Link></td>

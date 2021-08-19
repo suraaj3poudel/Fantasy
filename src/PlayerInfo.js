@@ -14,22 +14,19 @@ function PlayerInfo(props) {
 
     useEffect(() => {
         fetchData();
-        }, []);
+        });
 
 
 
         const fetchData = () => {
-            return fetch("entry/"+id+"/")
+            return fetch("/entry/"+id+"/")
                   .then(async response => {
                     try {
-                     console.log(response)
                      const data = await response.json();
                      setPlayer(data);
                      setLeagues(data.leagues.classic);
                    } catch(error) {
                      fetchData();
-                     //console.log('Error happened here!')
-                     //console.error(error)
                    }
         })}
 

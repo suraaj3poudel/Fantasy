@@ -3,14 +3,16 @@ import "./Header.css";
 import { useState } from 'react';
 import MenuItems from './MenuItems';
 
+
 function Header() {
 
     const [visible, setstate] = useState(false)
+    const [text, setText] = useState("")
 
     return (
-        <div className="header" onClick={()=>setstate(!visible)}>
+        <div className="header" >
             <img id="headerImg" alt="pl logo"></img>
-            <div className="menubar">
+            <div className="menubar" onClick={()=>setstate(!visible)}>
                 <div className="bar"></div>
                 <div className="bar"></div>
                 <div className="bar"></div>

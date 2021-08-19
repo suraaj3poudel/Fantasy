@@ -25,11 +25,23 @@
   cursor: pointer;
 }
 
+a{
+  text-decoration: none;
+}
+
+.link:hover{
+  color:white;
+}
+#name:hover, #gwpoints:hover, #totalPoints:hover{
+  color:white;
+}
+
 #rowTable{
   border-collapse: collapse;
   border-style: none;
   border:0;
 }
+
 
 td {
   text-align: center;
