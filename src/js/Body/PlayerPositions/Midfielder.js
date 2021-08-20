@@ -1,17 +1,16 @@
 import React from 'react'
-import "./Bench.css"
-import PlayerCard from './PlayerCard';
+import "../../../css/Body/PlayerPositions/Midfielder.css"
+import PlayerCard from '../../../js/Body/PlayerPage/PlayerCard';
 
-function Bench(props) {
-
-    var bench = props.bench;
+function Midfielder(props) {
+    var player = props.mid;
     var playerDetails = props.pd;
 
     return (
-        <div className="benchPortion" >
-            <h1 style={{marginLeft:"20px",padding:'1%'}}> Bench Players </h1>
-            <div className="bench">
-                {bench.map(function (footballer){ 
+        <div className="normalBackground" >
+            <h1 className ="playerTitle" style={{padding:'1%'}}> Midfielders </h1>
+            <div className="normalPlayer">
+                {player.map(function (footballer){ 
                 var x =  playerDetails.find(x=> x.id=== footballer.element);
                 return(<PlayerCard
                     key={x.id}
@@ -28,4 +27,4 @@ function Bench(props) {
     )
 }
 
-export default Bench
+export default Midfielder

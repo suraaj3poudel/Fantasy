@@ -1,22 +1,18 @@
 import React from 'react';
 import './App.css';
-import "./Header"
-import Header from './Header';
-import Footer from './Footer';
+import Header from './js/Header/Header';
+import Footer from './js/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import Player from './Player';
-import TabularBody from './TabularBody';
-import { useState } from 'react';
-import PremTable from './PremTable';
+import Player from './js/Body/PlayerPage/Player';
+import TabularBody from './js/Body/LeaguePage/TabularBody';
+import PremTable from './js/Body/Widgets/PremTable';
 
 function App() {
 
-  const [visible, setstate] = useState(false)
-
   return (
     <div className="app" >
-        <Header visible={visible}/> 
+        <Header/> 
         <div className="body" >
         <Router>
           <Route exact path="/" component={TabularBody}/>

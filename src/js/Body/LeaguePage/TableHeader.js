@@ -1,5 +1,5 @@
 import React from 'react'
-import "./TableHeader.css"
+import "../../../css/Body/LeaguePage/TableHeader.css"
 
 function TableHeader() {
     return (

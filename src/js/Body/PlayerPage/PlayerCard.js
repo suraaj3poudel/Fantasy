@@ -1,5 +1,5 @@
 import React from 'react'
-import './PlayerCard.css'
+import '../../../css/Body/PlayerPage/PlayerCard.css'
 
 function PlayerCard(props) {
 

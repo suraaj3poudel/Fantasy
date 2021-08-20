@@ -1,5 +1,5 @@
 import React from 'react'
-import './PremTable.css'
+import "../../../css/Body/Widgets/PremTable.css"
 function PremTable() {
     
     return (

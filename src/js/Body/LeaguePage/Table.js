@@ -1,6 +1,6 @@
 import React from 'react'
 import Row from './Row'
-import "./Table.css"
+import "../../../css/Body/LeaguePage/Table.css"
 
 import {useEffect} from "react";
 import {useState}  from 'react'
@@ -13,7 +13,8 @@ const people = []
 function Table() {
 
     const [ peoples, setPeople] = useState(people);
-    const [mounted, setM] = useState(true)
+    const [mounted, setM] = useState(true);
+    const [num, setNum] = useState([]);
     var players = [];
 
     var location = window.location.pathname;
@@ -22,7 +23,7 @@ function Table() {
 
     
     const fetchData = () => {
-        var link = "https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/leagues-classic"+location+"/standings/";
+        var link = "https://fantasy.premierleague.com/api/leagues-classic"+location+"/standings/";
         if(mounted){
             return fetch(link)
                   .then(async response => {
@@ -36,10 +37,28 @@ function Table() {
                    }
                   })
         }}
+
+
+        const fetchNum = () => {
+            var link = "http://www.randomnumberapi.com/api/v1.0/random?min=100&max=1000&count=9";
+            if(mounted){
+                return fetch(link)
+                      .then(async response => {
+                        try {
+                         const data = await response.json();
+                         console.log("fetching....")
+                         setNum(data);
+                       } catch(error) {
+                         console.log('Error happened here! '+link)
+                         console.error(error)
+                       }
+                      })
+            }}
     useEffect(() => {
         setM(true);
         if(mounted){
             fetchData();
+            fetchNum();
         }
         return ()=>setM(false) ;
         },[mounted]);
@@ -47,7 +66,8 @@ function Table() {
     useEffect(()=>{
         setInterval(()=>{
         fetchData();
-        }, 1000)
+        fetchNum();
+        }, 5000)
         }, [])
     
 
@@ -63,7 +83,7 @@ function Table() {
             if(peoples.hasOwnProperty(i)) {
             o.rank = peoples[i].rank;
             o.name = peoples[i].player_name;
-            o.gw = peoples[i].event_total;
+            o.gw = num[i];
             o.total= peoples[i].total;
             o.id = peoples[i].entry;
             players.push(o); 

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Header.css";
+import "../../css/Header/Header.css";
 import { useState } from 'react';
 import MenuItems from './MenuItems';
 
@@ -7,7 +7,6 @@ import MenuItems from './MenuItems';
 function Header() {
 
     const [visible, setstate] = useState(false)
-    const [text, setText] = useState("")
 
     return (
         <div className="header" >

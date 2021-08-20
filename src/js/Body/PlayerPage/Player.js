@@ -1,14 +1,13 @@
 import React from 'react'
-import "./Player.css"
+import "../../../css/Body/PlayerPage/Player.css"
 import { useState } from 'react';
-import { useEffect} from 'react';
-import Bench from './Bench';
-import GoalKeeper from './GoalKeeper';
-import Defender from './Defender';
-import Midfielder from './Midfielder';
-import Forward from './Forward';
+import Bench from '../../../js/Body/PlayerPositions/Bench';
+import GoalKeeper from '../../../js/Body/PlayerPositions/GoalKeeper';
+import Defender from '../../../js/Body/PlayerPositions/Defender';
+import Midfielder from '../../../js/Body/PlayerPositions/Midfielder';
+import Forward from '../../../js/Body/PlayerPositions/Forward';
 import { useLocation } from "react-router-dom"
-import PlayerInfo from './PlayerInfo';
+import PlayerInfo from '../../../js/Body/PlayerPage/PlayerInfo';
 
 function Player({match}) {
     const [ player, setPlayerData] = useState([]);
@@ -35,21 +34,20 @@ function Player({match}) {
     //     })
     
     
-    var link ="https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/entry/"+pid+"/event/1/picks/";
 
     const fetchData = () => {
-        return fetch(link)
+        return fetch("https://fantasy.premierleague.com/api/entry/"+pid+"/event/1/picks/")
               .then((response) => response.json())
               .then((data) => setPlayerData(data.picks));}
 
     const fetchPlayers = () => {
-        return fetch("https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/bootstrap-static/")
+        return fetch("https://fantasy.premierleague.com/api/bootstrap-static/")
                 .then((response) => response.json())
                 .then((data) => setPlayerDetails(data.elements));}
-    
-    
-                fetchData();
-                fetchPlayers();
+
+    fetchData();
+    fetchPlayers();
+
         return (
         
             <div id="table">

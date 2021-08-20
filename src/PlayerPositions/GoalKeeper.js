@@ -1,6 +1,6 @@
 import React from 'react'
 import './GoalKeeper.css'
-import PlayerCard from './PlayerCard';
+import PlayerCard from '../PlayerCard';
 
 function GoalKeeper(props) {
     var gk = props.gk;

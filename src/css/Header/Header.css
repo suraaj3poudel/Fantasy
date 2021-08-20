@@ -7,7 +7,7 @@
 
 .header{
     background-color: rgb(56, 2, 56);
-    background-image: url(./images/bg.svg);
+    background-image: url(../../images/bg.svg);
     background-position: -110px 60px;
     display:flex;
     z-index: 3;

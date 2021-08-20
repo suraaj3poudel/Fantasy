@@ -1,8 +1,8 @@
 import React from 'react'
-import "./PlayerInfo.css"
+import "../../../css/Body/PlayerPage/PlayerInfo.css"
 import { useEffect } from 'react';
 import { useState } from 'react';
-import LeagueInfo from './LeagueInfo';
+import LeagueInfo from '../../../js/Body/PlayerPage/LeagueInfo';
 
 function PlayerInfo(props) {
     var name = (props.name);
@@ -19,7 +19,7 @@ function PlayerInfo(props) {
 
 
         const fetchData = () => {
-            return fetch("https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/entry/"+id+"/")
+            return fetch("https://fantasy.premierleague.com/api/entry/"+id+"/")
                   .then(async response => {
                     try {
                      const data = await response.json();

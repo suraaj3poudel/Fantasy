@@ -1,14 +1,14 @@
 import React from 'react'
-import './Defender.css'
-import PlayerCard from './PlayerCard';
+import './Forward.css'
+import PlayerCard from '../PlayerCard';
 
-function Defender(props) {
-    var player = props.def;
+function Forward(props) {
+    var player = props.for;
     var playerDetails = props.pd;
 
     return (
         <div className="normalBackground" >
-            <h1 className ="playerTitle" style={{padding:'1%'}}> Defenders </h1>
+            <h1 className ="playerTitle" style={{padding:'1%'}}> Forwards </h1>
             <div className="normalPlayer">
                 {player.map(function (footballer){ 
                 var x =  playerDetails.find(x=> x.id=== footballer.element);
@@ -27,4 +27,4 @@ function Defender(props) {
     )
 }
 
-export default Defender
+export default Forward

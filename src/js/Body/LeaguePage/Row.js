@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Row.css";
+import "../../../css/Body/LeaguePage/Row.css";
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 

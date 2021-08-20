@@ -1,7 +1,7 @@
 import React from 'react'
-import './TabularBody.css'
-import TableHeader from "./TableHeader"
-import Table from "./Table"
+import '../../../css/Body/LeaguePage/TabularBody.css'
+import TableHeader from "../../../js/Body/LeaguePage/TableHeader"
+import Table from "../../../js/Body/LeaguePage/Table"
 
 function TabularBody() {
     return (
